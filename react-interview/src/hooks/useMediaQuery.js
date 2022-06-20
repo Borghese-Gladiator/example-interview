@@ -2,6 +2,7 @@
 import { useEffect, useState } from "react";
 
 const useMediaQuery = (minWidth) => {
+  
   const [state, setState] = useState({
     windowWidth: window.innerWidth,
     isDesiredWidth: false,
@@ -15,7 +16,8 @@ const useMediaQuery = (minWidth) => {
     };
     window.addEventListener("resize", resizeHandler);
     return () => window.removeEventListener("resize", resizeHandler);
-  }, [state.windowWidth]);
+  }, [state.windowWidth]); // eslint-disable-line react-hooks/exhaustive-deps
+  // minWidth is a constant passed by props and should not be included in the dependency array
 
   return state.isDesiredWidth;
 };
