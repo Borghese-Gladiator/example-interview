@@ -1,3 +1,4 @@
+// https://dev.to/franciscomendes10866/how-to-make-your-react-apps-responsive-with-a-custom-hook-4hd3
 import { useEffect, useState } from "react";
 
 const useMediaQuery = (minWidth) => {
